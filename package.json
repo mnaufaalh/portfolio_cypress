@@ -1,0 +1,35 @@
+{
+  "name": "portfolio_cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/parser": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@cypress/webpack-preprocessor": "^5.17.1",
+    "babel-loader": "^8.3.0",
+    "chai": "^5.1.0",
+    "cypress": "^12.17.1",
+    "dotenv": "^16.4.5",
+    "faker": "^6.6.6",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.3.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnaufaalh/portfolio_cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnaufaalh/portfolio_cypress/issues"
+  },
+  "homepage": "https://github.com/mnaufaalh/portfolio_cypress#readme"
+}

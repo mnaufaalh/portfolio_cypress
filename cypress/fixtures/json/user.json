@@ -1,0 +1,26 @@
+{
+  "buyerIndonesia": {
+    "emailAddress": "testing.kickavenue@gmail.com",
+    "password": "testingqa1"
+  },
+  "legitChecker": {
+    "emailAddress": "legitCheckTesting.kickavenue@gmail.com",
+    "password": "testingqa1"
+  },
+  "qualityChecker": {
+    "emailAddress": "qualityCheckTesting.kickavenue@gmail.com",
+    "password": "testingqa1"
+  },
+  "sellerIndonesia": {
+    "emailAddress": "testing.kickavenue@gmail.com",
+    "password": "testingqa1"
+  },
+  "sellerMalaysia": {
+    "emailAddress": "sellerMalaysiaAccount@my.com",
+    "password": "testingqa1"
+  },
+  "adminDapur": {
+    "emailAddress": "adminDapurTesting@gmail.com",
+    "password": "testingqa1"
+  }
+}
