@@ -36,4 +36,8 @@ export default class WebHomepage {
   static getUserLogin() {
     return cy.get('[class="CountryFlag_country-flag__UTRXi"]').siblings('p');
   }
+
+  static getProfileUserButton() {
+    return cy.get('[class="ButtonProfile_profile-image__r48gN"]');
+  }
 }

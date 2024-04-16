@@ -1,10 +1,9 @@
-require('dotenv').config();
 import { buyerIndonesia } from '/cypress/fixtures/json/user.json';
 import { adminDapur } from '/cypress/fixtures/json/user.json';
 import WebHomepage, { WEB_HOMEPAGE_URL } from '../../pom/web/homepage';
 import WebLogin, { WEB_LOGIN_URL } from '../../pom/web/login';
-import UserFlow from '../../support/user-flow';
-import UserLoginFlow from '../../support/user-login-flow';
+import UserFlow from '../../support/flow/user-flow';
+import UserLoginFlow from '../../support/flow/user-login-flow';
 
 describe('Login', function () {
   const STAGING_URL = Cypress.env('STAGING_URL');
@@ -20,7 +19,7 @@ describe('Login', function () {
     cy.url().should('include', WEB_LOGIN_URL);
     WebLogin.getEmailAddressField().type(buyerIndonesia.emailAddress);
   })
-  it('Should able to login with invalid credential', function () {
+  it('Should unable to login with invalid credential', function () {
     WebLogin.getPasswordField().type('salah password');
     WebLogin.getSubmitButton().click();
     WebLogin.modalFailedLogin().should('exist');
@@ -46,10 +45,7 @@ describe('Login', function () {
       .then(res => {
         userDetail = res.data.find(e => e.typed_email === buyerIndonesia.emailAddress);
         UserFlow.updateUserDetail(accessToken, userDetail);
-        UserLoginFlow.userLogin(buyerIndonesia.emailAddress, buyerIndonesia.password)
+        UserLoginFlow.userLogin(buyerIndonesia.emailAddress, buyerIndonesia.password);
       })
   });
 });
-
-
-// "emailAddress": "accountsellerindonesia@gmail.com",

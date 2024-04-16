@@ -11,8 +11,9 @@
     "babel-loader": "^8.3.0",
     "chai": "^5.1.0",
     "cypress": "^12.17.1",
+    "cypress-file-upload": "^5.0.8",
     "dotenv": "^16.4.5",
-    "faker": "^6.6.6",
+    "faker": "^5.5.3",
     "webpack": "^4.46.0"
   },
   "devDependencies": {

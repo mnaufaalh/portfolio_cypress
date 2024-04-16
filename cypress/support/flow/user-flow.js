@@ -1,6 +1,5 @@
 require('dotenv').config();
 const LUMEN_URL = Cypress.env('LUMEN_URL');
-import DapurLoginFlow from "./user-login-flow";
 
 export default class UserFlow {
   static findIdUserDapur(accessToken, email) {
@@ -19,7 +18,6 @@ export default class UserFlow {
   };
 
   static updateUserDetail(accessToken, userDetail) {
-    console.log(userDetail)
     const body = {
       username: userDetail.username,
       typed_email: userDetail.typed_email,
