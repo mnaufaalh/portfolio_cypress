@@ -15,4 +15,16 @@ export default class GeneralFlow {
         return JSON.parse(res.body.data.value).priceMultipliers.IDR;
       })
   }
+  static topUpSetting(accessToken) {
+    return cy.request({
+      url: `${LUMEN_URL}/admins/settings/86`,
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
+      .then(res => {
+        return JSON.parse(res.body.data.value);
+      })
+  }
 }

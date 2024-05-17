@@ -9,7 +9,7 @@
     "@babel/preset-env": "^7.21.5",
     "@cypress/webpack-preprocessor": "^5.17.1",
     "babel-loader": "^8.3.0",
-    "chai": "^5.1.0",
+    "chai": "^4.3.7",
     "cypress": "^12.17.1",
     "cypress-file-upload": "^5.0.8",
     "dotenv": "^16.4.5",
