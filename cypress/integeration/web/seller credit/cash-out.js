@@ -1,6 +1,6 @@
 import WebHomepage, { WEB_HOMEPAGE_URL } from "../../../pom/web/homepage";
 import UserLoginFlow from "../../../support/flow/user-login-flow";
-import { sellerIndonesia } from '/cypress/fixtures/json/user.json';
+import { userIndonesia } from '/cypress/fixtures/json/user.json';
 import LocalStorage from "../../../support/helper/local-storage";
 import Profle, { WEB_PROFILE_URL } from "../../../pom/web/profile";
 import 'cypress-file-upload';
@@ -13,7 +13,7 @@ describe('Seller Credit', function () {
     Cypress.on('uncaught:exception', () => {
       return false
     });
-    UserLoginFlow.userLogin(sellerIndonesia.emailAddress, sellerIndonesia.password).then(res => {
+    UserLoginFlow.userLogin(userIndonesia.emailAddress, userIndonesia.password).then(res => {
       accessToken = res;
       LocalStorage.setLogin(accessToken);
     });

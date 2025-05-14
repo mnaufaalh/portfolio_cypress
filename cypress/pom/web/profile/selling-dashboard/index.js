@@ -1,4 +1,4 @@
-export default class SellingDasboard {
+export default class SellingDashboard {
   static getSellAProductButton() {
     return cy.get('.sell-request');
   }

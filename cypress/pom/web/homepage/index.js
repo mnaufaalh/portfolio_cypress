@@ -10,34 +10,39 @@ export default class WebHomepage {
   }
 
   static getSneakersButton() {
-    return cy.get('.ant-col').children('p:contains("Sneakers")');
+    return cy.get('.HeaderRow_header-row__2M33E').children('.ant-col').find('p:contains("Sneakers")');
   }
 
   static getApparelButton() {
-    return cy.get('.ant-col').children('p:contains("Apparel")');
+    return cy.get('.HeaderRow_header-row__2M33E').children('.ant-col').find('p:contains("Apparel")');
   }
 
   static getLuxuryButton() {
-    return cy.get('.ant-col').children('p:contains("Luxury")');
+    return cy.get('.HeaderRow_header-row__2M33E').children('.ant-col').find('p:contains("Luxury")');
   }
 
   static getElectronicAndCollectibleButton() {
-    return cy.get('.ant-col').children('p:contains("Electronics & Collectibles")');
+    return cy.get('.HeaderRow_header-row__2M33E').children('.ant-col').find('p:contains("Electronics & Collectibles")');
   }
 
   static getSearchButton() {
-    return cy.get('[alt="default-image"]');
+    return cy.get('.ant-input-prefix');
+    // return cy.get('p:contains("Type any products here")');
   }
 
   static getSeachField() {
-    return cy.get('input[placeholder="Type any products here"]');
+    return cy.get('.ant-col').children('input[placeholder="Type any products here"]');
   }
 
   static getUserLogin() {
-    return cy.get('[class="CountryFlag_country-flag__UTRXi"]').siblings('p');
+    return cy.get('.ButtonProfile_profile-image__r48gN').siblings('p');
   }
 
   static getProfileUserButton() {
-    return cy.get('[class="ButtonProfile_profile-image__r48gN"]');
+    return cy.get('.ButtonProfile_profile-image__r48gN');
+  }
+
+  static getClosePopUpBanner() {
+    return cy.get('.dont-show-again');
   }
 }

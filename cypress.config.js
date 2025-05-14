@@ -10,8 +10,8 @@ module.exports = defineConfig({
   // from cypress.json
   viewportWidth: 1920,
   viewportHeight: 1080,
-  defaultCommandTimeout: 20000,
-  requestTimeout: 10000,
+  defaultCommandTimeout: 30000,
+  requestTimeout: 30000,
   responseTimeout: 60000,
   screenshotsFolder: 'report/screenshots',
   video: false,

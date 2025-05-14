@@ -1,11 +1,23 @@
 export default class midtransSimulator {
-  static getVirtualAccountNumberField() {
-    return cy.get('[name="va_number"]');
+  static virtualAccountButtonOnSideBar() {
+    return cy.get('span:contains("Virtual Account")').parents('.sidebar-list');
   }
-  static getInquireButton() {
-    return cy.get('[value="Inquire"]');
+  static bankButtonOnSideBar(bankVA) {
+    return cy.get(`span:contains("${bankVA}")`).parents('[class="sidebar-link sub-link"]');
   }
-  static getPayButton() {
-    return cy.get('[value="Pay"]');
+  static billerCodeField() {
+    return cy.get('input[name="billerCode"]');
+  }
+  static billKeyField() {
+    return cy.get('input[name="billKey"]');
+  }
+  static virtualAccountField(bankVA) {
+    return bankVA === 'BCA' || bankVA === 'BNI' ? cy.get('input[name="va_number"]') : cy.get('input[name="vaNumber"]');
+  }
+  static inquireButton() {
+    return cy.get('[type="submit"][value="Inquire"]');
+  }
+  static payButton() {
+    return cy.get('[type="submit"][value="Pay"]');
   }
 }

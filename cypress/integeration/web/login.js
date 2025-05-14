@@ -10,11 +10,24 @@ describe('Login', function () {
   let accessToken;
   let userDetail;
   beforeEach(() => {
+    cy.intercept({
+      method: 'GET',
+      pathname: '/products/trends',
+      query: {
+        availables: 'true',
+        category: 'all_category',
+        per_page: '40',
+        homepage_all_category: 'true',
+        range_type: 'week',
+        range_value: '1'
+      }
+    }).as('BannerLoaded');
     cy.visit(STAGING_URL);
     Cypress.on('uncaught:exception', () => {
       return false
     });
     cy.url().should('include', WEB_HOMEPAGE_URL);
+    cy.wait('@BannerLoaded');
     WebHomepage.getLoginButton().click();
     cy.url().should('include', WEB_LOGIN_URL);
     WebLogin.getEmailAddressField().type(buyerIndonesia.emailAddress);
@@ -27,6 +40,7 @@ describe('Login', function () {
   it('Should able to login with valid credential', function () {
     WebLogin.getPasswordField().type(buyerIndonesia.password);
     WebLogin.getSubmitButton().click();
+    cy.wait('@BannerLoaded');
     WebHomepage.getUserLogin().invoke('text').should('eql', buyerIndonesia.emailAddress);
   });
   it('Should be to reset the password if failed to login in 5 times in a row', function () {

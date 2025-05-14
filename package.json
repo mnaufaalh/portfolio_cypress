@@ -12,6 +12,7 @@
     "chai": "^4.3.7",
     "cypress": "^12.17.1",
     "cypress-file-upload": "^5.0.8",
+    "dayjs": "^1.11.7",
     "dotenv": "^16.4.5",
     "faker": "^5.5.3",
     "webpack": "^4.46.0"

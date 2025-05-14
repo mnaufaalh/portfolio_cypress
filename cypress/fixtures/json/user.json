@@ -1,8 +1,4 @@
 {
-  "buyerIndonesia": {
-    "emailAddress": "testing.kickavenue@gmail.com",
-    "password": "testingqa1"
-  },
   "legitChecker": {
     "emailAddress": "legitCheckTesting.kickavenue@gmail.com",
     "password": "testingqa1"
@@ -11,13 +7,25 @@
     "emailAddress": "qualityCheckTesting.kickavenue@gmail.com",
     "password": "testingqa1"
   },
-  "sellerIndonesia": {
-    "emailAddress": "testing.kickavenue@gmail.com",
-    "password": "testingqa1"
+  "automationUserSeller": {
+    "emailAddress": "automationUserSeller@gmail.com",
+    "password": "Buatest1"
   },
-  "sellerMalaysia": {
-    "emailAddress": "sellerMalaysiaAccount@my.com",
-    "password": "testingqa1"
+  "automationUserBuyerMidtrans": {
+    "emailAddress": "automationUserBuyerMidtrans@gmail.com",
+    "password": "Buatest1"
+  },
+  "automationUserBuyerKickCredit": {
+    "emailAddress": "automationUserBuyerKickCredit@gmail.com",
+    "password": "Buatest1"
+  },
+  "automationUserBuyerKickPoint": {
+    "emailAddress": "automationUserBuyerKickPoint@gmail.com",
+    "password": "Buatest1"
+  },
+  "automationUserBuyerSellerCredit": {
+    "emailAddress": "automationUserBuyerSellerCredit@gmail.com",
+    "password": "Buatest1"
   },
   "adminDapur": {
     "emailAddress": "adminDapurTesting@gmail.com",

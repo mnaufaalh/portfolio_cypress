@@ -1,6 +1,6 @@
-export const WEB_PROFILE_URL = '/profile-settings';
+export const WEB_PROFILE_URL = "/profile-settings";
 
-export default class Profle {
+export default class Profile {
   static getBuyingDashboardButton() {
     return cy.get('.menu-item:contains("Buying Dashboard")');
   }
@@ -20,15 +20,15 @@ export default class Profle {
     return cy.get('.menu-item:contains("Logout Button")');
   }
   static getKickCreditButton() {
-    return cy.get('.kick-credit-container');
+    return cy.get(".kick-credit-container");
   }
   static getSellerCreditButton() {
-    return cy.get('.seller-credit-container');
+    return cy.get(".seller-credit-container");
   }
   static getSettingsButton() {
-    return cy.get('.top-up-container');
+    return cy.get(".top-up-container");
   }
   static getLogoutButton() {
-    return cy.get('.cash-out-container');
+    return cy.get(".cash-out-container");
   }
 }

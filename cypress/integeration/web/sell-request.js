@@ -1,6 +1,6 @@
 import WebHomepage, { WEB_HOMEPAGE_URL } from "../../pom/web/homepage";
 import UserLoginFlow from "../../support/flow/user-login-flow";
-import { sellerIndonesia } from '/cypress/fixtures/json/user.json';
+import { userIndonesia } from '/cypress/fixtures/json/user.json';
 import LocalStorage from "../../support/helper/local-storage";
 import Profle, { WEB_PROFILE_URL } from "../../pom/web/profile";
 import SellingDasboard from "../../pom/web/profile/selling-dashboard";
@@ -15,7 +15,7 @@ describe('Sell Request', function () {
   let accessToken;
   const STAGING_URL = Cypress.env('STAGING_URL');
   const imagePath = 'image/kickavenue.png';
-  const product = faker.random.arrayElement(['sneakers', 'handbags', 'apparels', 'lifestyles']);
+  const category = faker.random.arrayElement(['sneakers', 'handbags', 'apparels', 'lifestyles']);
   let displayNameItem;
   let sizes;
   let index;
@@ -45,7 +45,7 @@ describe('Sell Request', function () {
     Cypress.on('uncaught:exception', () => {
       return false
     });
-    UserLoginFlow.userLogin(sellerIndonesia.emailAddress, sellerIndonesia.password).then(res => {
+    UserLoginFlow.userLogin(userIndonesia.emailAddress, userIndonesia.password).then(res => {
       accessToken = res;
       LocalStorage.setLogin(accessToken);
     });
@@ -72,18 +72,18 @@ describe('Sell Request', function () {
     Profle.getSellingDashboardButton().click();
     SellingDasboard.getSellAProductButton().should('be.visible').click();
     cy.url().should('include', SELL_NOW_URL);
-    SellNow.getCategoryButton(product).click();
-    product !== 'handbags' ? indexUploadImage = 5 : indexUploadImage = 6;
+    SellNow.getCategoryButton(category).click();
+    category !== 'handbags' ? indexUploadImage = 5 : indexUploadImage = 6;
     for (let i = 0; i < indexUploadImage; i++) {
       SellNow.getUploadPhoto(i).attachFile(imagePath);
     };
-    ProductFlow.findProduct(product, accessToken).then(res => {
+    ProductFlow.findProduct(category, accessToken).then(res => {
       selectedItem = res;
       displayNameItem = selectedItem.display_name;
       sizes = selectedItem.sizes;
 
       if (sizes.length === 0 || sizes[0] === undefined) {
-        ProductFlow.browseSizeProduct(accessToken, product, selectedItem)
+        ProductFlow.browseSizeProduct(accessToken, category, selectedItem)
           .then(res => {
             sizes = res;
             return sizes;
@@ -94,7 +94,7 @@ describe('Sell Request', function () {
     })
       .then(() => {
         SellNow.getProductName().type(displayNameItem);
-        return ProductFlow.searchIndexOfProductName(displayNameItem, product, selectedItem.id)
+        return ProductFlow.searchIndexOfProductName(displayNameItem, category, selectedItem.id)
       })
       .then(res => {
         index = res;
@@ -104,7 +104,7 @@ describe('Sell Request', function () {
         SellNow.getSearchSize(selectedSize.US).click();
         SellNow.getProductCondition().click();
         let productCondition;
-        product === 'handbags' ? productCondition = ['BRAND NEW', 'PRISTINE', 'GOOD', 'WELL USED', 'LIKE NEW', 'VINTAGE'] : productCondition = ['BRAND NEW', 'PRE OWNED'];
+        category === 'handbags' ? productCondition = ['BRAND NEW', 'PRISTINE', 'GOOD', 'WELL USED', 'LIKE NEW', 'VINTAGE'] : productCondition = ['BRAND NEW', 'PRE OWNED'];
         const selectedProductCondition = faker.random.arrayElement(productCondition);
         SellNow.getSearchProductCondition(selectedProductCondition).click();
         SellNow.getBoxCondition().click();
